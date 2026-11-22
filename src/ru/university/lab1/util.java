@@ -2,7 +2,33 @@ package ru.university.lab1;
 
 public class util {
     public static void run(){
+        operations();
+        difference();
         check(15);
+        swap(1, 2);
+        print(10);
+        print(10.10);
+        print("word");
+        int[] arr1 = {1, 2, 3};
+        print(arr1);
+        double[] arr2 = {1.1, 2.2, 3.3};
+
+        //----------------------------
+        System.out.println();
+        System.out.println(summa(0));
+        System.out.println(summa(arr2));
+
+        //---------------------------
+        System.out.println();
+        System.out.println(powerLinear(5.2, 1));
+        System.out.println(powerIterative(5.2, 1));
+        System.out.println(Math.pow(5.2, 1));
+        System.out.println(powerLinear(5.2, 0));
+        System.out.println(powerIterative(5.2, 0));
+        System.out.println(Math.pow(5.2, 0));
+        System.out.println(powerLinear(5.2, -10));
+        System.out.println(powerIterative(5.2, -10));
+        System.out.println(Math.pow(5.2, -10));
     }
 
     //------------------------------------
@@ -59,4 +85,66 @@ public class util {
         }
         System.out.println("Количество единичных битов: " + count);
     }
+    //3.4
+    private static void swap(int a, int b){
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+    }
+    //------------------------------------------------------
+    //Методы и передача аргументов
+    //7.1
+    private static void print(int num){
+        System.out.print(num + " ");
+        System.out.println("Для int");
+    }
+    private static void print(double num){
+        System.out.print(num + " ");
+        System.out.println("Для double");
+    }
+    private static void print(String sentence){
+        System.out.print(sentence + " ");
+        System.out.println("Для String");
+    }
+    private static void print(int[] arr){
+        for(int num : arr){
+            System.out.print(num + " ");
+        }
+        System.out.println("Для int[]");
+    }
+    //7.2
+    private static double summa(double... numbers){
+        double summa = 0;
+        for (double n : numbers){
+            summa += n;
+        }
+        return summa;
+    }
+    //7.3
+    private static double powerLinear(double number, int power){ //рекурсия
+        if(power < 0) {
+            return -1;
+        } else if (power == 0) {
+            return 1;
+        } else if(power == 1){
+            return number;
+        }
+        return number * powerLinear(number, power - 1);
+    }
+    private static double powerIterative(double number, int power){ //итерация
+        if(power < 0) {
+            return -1;
+        }
+        double result = 1.0;
+        for(int i = 1; i <= power; i++){
+            result *= number;
+        }
+        return result;
+    }
+    /*Быстрее будет выполняться итеративный алгоритм
+    * т.к. рекурсия каждый раз вызывает саму себя, это тратит больше ресурсов и времени,
+    * каждый вызов рекурсии требует создания нового кадра в стеке вызова,
+    * у итерации фиксированный объем памяти*/
 }

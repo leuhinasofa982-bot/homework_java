@@ -108,18 +108,4 @@ public class arrays {
         }
         return transposedMatrix;
     }
-    //6.3!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    private static int[][] matrixMultiplication(int[][] matrix1, int[][] matrix2) {
-        if(matrix1[0].length != matrix2.length) {
-            System.out.println("Такие матрицы не могут быть перемноженными!");
-            return null;
-        }
-        int[][] newMatrix = new int[matrix1.length][matrix2[0].length];
-        for(int i = 0; i < matrix1.length; i++){
-            for(int j = 0; j < matrix1[i].length; j++){
-
-            }
-        }
-        return newMatrix;
-    }
 }

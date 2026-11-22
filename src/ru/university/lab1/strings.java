@@ -88,28 +88,4 @@ public class strings {
         System.out.println("Количество цифр: " + numAmount);
         System.out.println("Количество пробелов: " + spaceAmount);
     }
-    //4.4!!!!!!!!!!!!!!!1
-    private static String caesarCipher(String phrase, int shift) {
-        String encryptedPhrase = "";
-
-        return encryptedPhrase;
-    }
-    //4.5 !!!!!!!!!!!!!
-    private static void longestWord(String phrase) {
-        int wordBeginning = 0;
-        int longestWordBeginning = 0;
-        int longestWordEnd = 0;
-        int wordLength = 0;
-        for(int i = 0; i <= (phrase.length() - 1); i++){
-            if (Character.isWhitespace(phrase.charAt(i))) {
-               if(wordLength < (i - wordBeginning)) {
-                   wordLength = i - wordBeginning;
-                   longestWordBeginning = i++;
-                   longestWordEnd = i;
-               }
-               wordBeginning = i++;
-            }
-        }
-
-    }
 }

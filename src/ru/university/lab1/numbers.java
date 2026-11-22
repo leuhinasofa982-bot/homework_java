@@ -2,9 +2,24 @@ package ru.university.lab1;
 
 public class numbers {
     public static void run() {
+        maxMinValue();
+        intPlus1();
+        typesDif();
+        balances();
+        longToInt();
         char a = 'A';
         char b = 'B';
         charOperations(a, b);
+        overflowedCheck(200, 10);
+
+        //--------------------------
+        System.out.println();
+        summa();
+        cycleAndResult();
+        System.out.println(comparisonDouble(2.3, 5.6, 3));
+        getInfinity(3.5, -0.6);
+        comparisonTransformation();
+        comparisonFloatDouble();
     }
 
     //----------------------------------
